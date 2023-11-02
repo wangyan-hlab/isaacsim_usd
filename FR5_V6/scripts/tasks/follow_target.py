@@ -55,7 +55,33 @@ class FollowTarget(tasks.FollowTarget):
         # return manipulator
     
 
-        asset_path = "/home/yan/Documents/isaacsim_usd/FR5_V6/usd/FR5_V6_WSG50/FR5_V6_WSG50_table.usd"
+        # asset_path = "/home/yan/Documents/isaacsim_usd/FR5_V6/usd/FR5_V6_WSG50/FR5_V6_WSG50_table.usd"
+        # prim_path = "/World/FR5_V6"
+        # eef_prim_path = "base"
+        # joint_prim_names=["left_driver_joint", "right_driver_joint"]
+
+        # add_reference_to_stage(usd_path=asset_path, prim_path=prim_path)
+        # gripper = ParallelGripper(
+        #     end_effector_prim_path=prim_path+"/robot/"+eef_prim_path,
+        #     joint_prim_names=joint_prim_names,
+        #     joint_opened_positions=np.array([0.054, 0.054]),
+        #     joint_closed_positions=np.array([0.0, 0.0]),
+        #     action_deltas=np.array([0.054, 0.054]),
+        # )
+        # manipulator = SingleManipulator(prim_path=prim_path+"/robot",
+        #                                 name="fr5",
+        #                                 end_effector_prim_name="base",
+        #                                 gripper=gripper)
+        # joints_default_positions = np.zeros(8)
+        # joints_default_positions[1] = -1.57
+        # joints_default_positions[2] = 1.57
+        # joints_default_positions[6] = 0
+        # joints_default_positions[7] = 0
+        # manipulator.set_joints_default_state(positions=joints_default_positions)
+        # return manipulator
+    
+
+        asset_path = "/home/yan/Documents/isaacsim_usd/FR5_V6/usd/FR5_V6_DHPGI80/FR5_V6_DHPGI80_table.usd"
         prim_path = "/World/FR5_V6"
         eef_prim_path = "base"
         joint_prim_names=["left_driver_joint", "right_driver_joint"]
@@ -64,9 +90,9 @@ class FollowTarget(tasks.FollowTarget):
         gripper = ParallelGripper(
             end_effector_prim_path=prim_path+"/robot/"+eef_prim_path,
             joint_prim_names=joint_prim_names,
-            joint_opened_positions=np.array([0.054, 0.054]),
-            joint_closed_positions=np.array([0.0, 0.0]),
-            action_deltas=np.array([0.054, 0.054]),
+            joint_opened_positions=np.array([0.0, 0.0]),
+            joint_closed_positions=np.array([-0.04, -0.04]),
+            action_deltas=np.array([0.04, 0.04]),
         )
         manipulator = SingleManipulator(prim_path=prim_path+"/robot",
                                         name="fr5",

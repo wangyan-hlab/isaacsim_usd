@@ -1,6 +1,6 @@
 from omni.isaac.kit import SimulationApp
 
-simulation_app = SimulationApp({"headless": False})
+simulation_app = SimulationApp({"headless": True})
 
 from omni.isaac.core import World
 from omni.isaac.manipulators import SingleManipulator
@@ -12,8 +12,8 @@ import os
 
 my_world = World(stage_units_in_meters=1.0)
 #TODO: change this to your own path
-# asset_path = "/home/yan/Documents/isaacsim_usd/FR5_V6/usd/FR5_V6_RTQ85/FR5_V6_RTQ85_table.usd"
-asset_path = os.path.join(os.getcwd(), "FR5_V6/usd/FR5_V6_RTQ85/FR5_V6_RTQ85_table.usd")
+asset_path = "/home/yan/Documents/isaacsim_usd/FR5_V6/usd/FR5_V6_RTQ85/FR5_V6_RTQ85_table.usd"
+# asset_path = os.path.join(os.getcwd(), "FR5_V6/usd/FR5_V6_RTQ85/FR5_V6_RTQ85_table.usd")
 prim_path = "/World/FR5_V6"
 add_reference_to_stage(usd_path=asset_path, prim_path=prim_path)
 #define the gripper
@@ -49,6 +49,7 @@ while simulation_app.is_running():
             my_world.reset()
         i += 1
         gripper_positions = my_fr.gripper.get_joint_positions()
+        # print("gripper_positions:", gripper_positions)
         if i < 100:
             #close the gripper slowly
             my_fr.gripper.apply_action(

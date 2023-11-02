@@ -69,12 +69,7 @@
     <axis xyz="0. -1. 0."/>
     <limit lower="0." upper="0.054" effort="0." velocity="0.5"/>
   </joint>
-  <!-- <joint name="root_joint" type="fixed">
-    <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
-    <parent link="World"/>
-    <child link="FR5_base_link"/>
-    <limit lower="0." upper="0." effort="0." velocity="0."/>
-  </joint> -->
+
   <link name="FR5_base_link">
     <inertial>
       <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
@@ -250,7 +245,6 @@
       </geometry>
     </collision>
   </link>
-  <!-- <link name="World"/> -->
   <link name="base">
     <visual>
       <origin xyz="0. 0. 0.009" rpy="0. 0. 0."/>
