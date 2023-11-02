@@ -10,7 +10,7 @@ import carb
 
 my_world = World(stage_units_in_meters=1.0)
 #Initialize the Follow Target task with a target location for the cube to be followed by the end effector
-my_task = FollowTarget(name="fr_follow_target", target_position=np.array([0.5, 0, 0.5]))
+my_task = FollowTarget(name="fr_follow_target", target_position=np.array([-0.4, -0.2, 0.5]))
 my_world.add_task(my_task)
 my_world.reset()
 task_params = my_world.get_task("fr_follow_target").get_params()

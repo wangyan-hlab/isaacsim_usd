@@ -8,7 +8,7 @@ cspace:
     - wrist_3_joint
 root_link: world
 default_q: [
-    0.00, -1.57, 1.57, 0.00, 0.00, 0.00
+    0.00, 0.00, 0.00, 0.00, 0.00, 0.00
 ]
 cspace_to_urdf_rules: []
 composite_task_spaces: []

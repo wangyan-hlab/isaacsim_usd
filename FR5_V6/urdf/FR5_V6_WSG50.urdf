@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot name="FR5_V6_WSG50">
+  <link name="world"/>
+  <!-- base_joint fixes base_link to the environment -->
+  <joint name="base_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <parent link="world"/>
+    <child link="FR5_base_link"/>
+  </joint>
+  <joint name="shoulder_pan_joint" type="revolute">
+    <origin xyz="0. 0. 0.152" rpy="0. 0. 0."/>
+    <parent link="FR5_base_link"/>
+    <child link="FR5_link1"/>
+    <axis xyz="0. 0. 1."/>
+    <limit lower="-3.1414997" upper="3.1414997" effort="0." velocity="2.1"/>
+  </joint>
+  <joint name="shoulder_lift_joint" type="revolute">
+    <origin xyz="0. 0. 0." rpy="1.5708 0. 0. "/>
+    <parent link="FR5_link1"/>
+    <child link="FR5_link2"/>
+    <axis xyz="0. 0. 1."/>
+    <limit lower="-4.7119996" upper="1.5699999" effort="0." velocity="2.1"/>
+  </joint>
+  <joint name="elbow_joint" type="revolute">
+    <origin xyz="-0.425 0. 0. " rpy="0. 0. 0."/>
+    <parent link="FR5_link2"/>
+    <child link="FR5_link3"/>
+    <axis xyz="0. 0. 1."/>
+    <limit lower="-3.1414997" upper="3.1414997" effort="0." velocity="3.14"/>
+  </joint>
+  <joint name="wrist_1_joint" type="revolute">
+    <origin xyz="-0.395 0. 0.102" rpy="0. 0. 0."/>
+    <parent link="FR5_link3"/>
+    <child link="FR5_link4"/>
+    <axis xyz="0. 0. 1."/>
+    <limit lower="-4.7119996" upper="1.5699999" effort="0." velocity="2.1"/>
+  </joint>
+  <joint name="wrist_2_joint" type="revolute">
+    <origin xyz="0. -0.102 0. " rpy="1.5708 0. 0. "/>
+    <parent link="FR5_link4"/>
+    <child link="FR5_link5"/>
+    <axis xyz="0. 0. 1."/>
+    <limit lower="-3.1414997" upper="3.1414997" effort="0." velocity="2.1"/>
+  </joint>
+  <joint name="wrist_3_joint" type="revolute">
+    <origin xyz="0. 0.1 0. " rpy="-1.5708 0. 0. "/>
+    <parent link="FR5_link5"/>
+    <child link="FR5_link6"/>
+    <axis xyz="0. 0. 1."/>
+    <limit lower="-3.1414997" upper="3.1414997" effort="0." velocity="2.1"/>
+  </joint>
+  <joint name="FixedJoint" type="fixed">
+    <origin xyz="-0.0000105 0.0000847 0.0000004" rpy="-0.0000037 -0.0000003 -0.0001019"/>
+    <parent link="FR5_link6"/>
+    <child link="base"/>
+    <limit lower="0." upper="0." effort="0." velocity="0."/>
+  </joint>
+  <joint name="left_driver_joint" type="prismatic">
+    <origin xyz="-0.0001773 0. 0.102 " rpy="0. 0.0000001 -1.5707966"/>
+    <parent link="base"/>
+    <child link="left_finger"/>
+    <axis xyz="0. -1. 0."/>
+    <limit lower="0." upper="0.054" effort="0." velocity="0.5"/>
+  </joint>
+  <joint name="right_driver_joint" type="prismatic">
+    <origin xyz="0. 0. 0.102" rpy="-0. 0.0000001 1.5707961"/>
+    <parent link="base"/>
+    <child link="right_finger"/>
+    <axis xyz="0. -1. 0."/>
+    <limit lower="0." upper="0.054" effort="0." velocity="0.5"/>
+  </joint>
+  <!-- <joint name="root_joint" type="fixed">
+    <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+    <parent link="World"/>
+    <child link="FR5_base_link"/>
+    <limit lower="0." upper="0." effort="0." velocity="0."/>
+  </joint> -->
+  <link name="FR5_base_link">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="1.6185"/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="/home/yan/Documents/isaacsim_usd/FR5_V6/meshes/fr5_wsg50/FR5_base_link_visuals.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="/home/yan/Documents/isaacsim_usd/FR5_V6/meshes/fr5_wsg50/FR5_base_link_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="/home/yan/Documents/isaacsim_usd/FR5_V6/meshes/fr5_wsg50/FR5_base_link_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="FR5_link1">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="4.6399999"/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="/home/yan/Documents/isaacsim_usd/FR5_V6/meshes/fr5_wsg50/FR5_link1_visuals.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="/home/yan/Documents/isaacsim_usd/FR5_V6/meshes/fr5_wsg50/FR5_link1_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="/home/yan/Documents/isaacsim_usd/FR5_V6/meshes/fr5_wsg50/FR5_link1_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="FR5_link2">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="10.0799999"/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="/home/yan/Documents/isaacsim_usd/FR5_V6/meshes/fr5_wsg50/FR5_link2_visuals.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="/home/yan/Documents/isaacsim_usd/FR5_V6/meshes/fr5_wsg50/FR5_link2_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="/home/yan/Documents/isaacsim_usd/FR5_V6/meshes/fr5_wsg50/FR5_link2_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="FR5_link3">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="2.71"/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="/home/yan/Documents/isaacsim_usd/FR5_V6/meshes/fr5_wsg50/FR5_link3_visuals.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="/home/yan/Documents/isaacsim_usd/FR5_V6/meshes/fr5_wsg50/FR5_link3_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="/home/yan/Documents/isaacsim_usd/FR5_V6/meshes/fr5_wsg50/FR5_link3_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="FR5_link4">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="1.5599999"/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="/home/yan/Documents/isaacsim_usd/FR5_V6/meshes/fr5_wsg50/FR5_link4_visuals.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="/home/yan/Documents/isaacsim_usd/FR5_V6/meshes/fr5_wsg50/FR5_link4_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="/home/yan/Documents/isaacsim_usd/FR5_V6/meshes/fr5_wsg50/FR5_link4_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="FR5_link5">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="1.5599999"/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="/home/yan/Documents/isaacsim_usd/FR5_V6/meshes/fr5_wsg50/FR5_link5_visuals.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="/home/yan/Documents/isaacsim_usd/FR5_V6/meshes/fr5_wsg50/FR5_link5_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="/home/yan/Documents/isaacsim_usd/FR5_V6/meshes/fr5_wsg50/FR5_link5_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="FR5_link6">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="0.36"/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="/home/yan/Documents/isaacsim_usd/FR5_V6/meshes/fr5_wsg50/FR5_link6_visuals.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="/home/yan/Documents/isaacsim_usd/FR5_V6/meshes/fr5_wsg50/FR5_link6_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="/home/yan/Documents/isaacsim_usd/FR5_V6/meshes/fr5_wsg50/FR5_link6_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- <link name="World"/> -->
+  <link name="base">
+    <visual>
+      <origin xyz="0. 0. 0.009" rpy="0. 0. 0."/>
+      <geometry>
+        <cylinder radius="0.041" length="0.018"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0.008" rpy="0. 0. 1.5707963"/>
+      <geometry>
+        <mesh filename="/home/yan/Documents/isaacsim_usd/FR5_V6/meshes/fr5_wsg50/collisions__geom_3.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0.008" rpy="0. 0. 1.5707963"/>
+      <geometry>
+        <mesh filename="/home/yan/Documents/isaacsim_usd/FR5_V6/meshes/fr5_wsg50/collisions__geom_4.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0.066" rpy="0. 0. 0."/>
+      <geometry>
+        <box size="0.146 0.05 0.072"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0.008" rpy="0. 0. 1.5707963"/>
+      <geometry>
+        <mesh filename="/home/yan/Documents/isaacsim_usd/FR5_V6/meshes/fr5_wsg50/visuals__geom_2.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0.03" rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="/home/yan/Documents/isaacsim_usd/FR5_V6/meshes/fr5_wsg50/visuals__geom_5.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <sphere radius="0.005"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="-0.032507 -0.065 0.054202" rpy="0. 0. 0."/>
+      <geometry>
+        <sphere radius="0.001"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0.25491" rpy="0. 0. 0."/>
+      <geometry>
+        <sphere radius="0.005"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0.009" rpy="0. 0. 0."/>
+      <geometry>
+        <cylinder radius="0.041" length="0.018"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0. 0. 0.008" rpy="0. 0. 1.5707963"/>
+      <geometry>
+        <mesh filename="/home/yan/Documents/isaacsim_usd/FR5_V6/meshes/fr5_wsg50/collisions__geom_3.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0. 0. 0.008" rpy="0. 0. 1.5707963"/>
+      <geometry>
+        <mesh filename="/home/yan/Documents/isaacsim_usd/FR5_V6/meshes/fr5_wsg50/collisions__geom_4.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0. 0. 0.066" rpy="0. 0. 0."/>
+      <geometry>
+        <box size="0.146 0.05 0.072"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="left_finger">
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="/home/yan/Documents/isaacsim_usd/FR5_V6/meshes/fr5_wsg50/collisions__geom_11.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. -0.012 0.0105" rpy="0. 0. 0."/>
+      <geometry>
+        <box size="0.03 0.02 0.02"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="/home/yan/Documents/isaacsim_usd/FR5_V6/meshes/fr5_wsg50/visuals__geom_10.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="/home/yan/Documents/isaacsim_usd/FR5_V6/meshes/fr5_wsg50/collisions__geom_11.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0. -0.012 0.0105" rpy="0. 0. 0."/>
+      <geometry>
+        <box size="0.03 0.02 0.02"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="right_finger">
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="/home/yan/Documents/isaacsim_usd/FR5_V6/meshes/fr5_wsg50/collisions__geom_8.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. -0.012 0.0105" rpy="0. 0. 0."/>
+      <geometry>
+        <box size="0.03 0.02 0.02"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="/home/yan/Documents/isaacsim_usd/FR5_V6/meshes/fr5_wsg50/visuals__geom_7.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="/home/yan/Documents/isaacsim_usd/FR5_V6/meshes/fr5_wsg50/collisions__geom_8.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0. -0.012 0.0105" rpy="0. 0. 0."/>
+      <geometry>
+        <box size="0.03 0.02 0.02"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>

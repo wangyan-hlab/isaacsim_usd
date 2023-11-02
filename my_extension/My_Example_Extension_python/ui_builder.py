@@ -160,9 +160,9 @@ class UIBuilder:
         """
         # Load the UR10e
         # robot_prim_path = "/FR5_V6"
-        robot_prim_path = "/FR5_V6_gripper_frame"
+        robot_prim_path = "/FR5_V6_RTQ85"
         # path_to_robot_usd = "/home/yan/Documents/isaacsim_usd/my_extension/data/FR5_V6.usd"
-        path_to_robot_usd = "/home/yan/Documents/isaacsim_usd/my_extension/data/FR5_V6_gripper_frame.usd"
+        path_to_robot_usd = "/home/yan/Documents/isaacsim_usd/my_extension/data/FR5_V6_RTQ85.usd"
 
         # Do not reload assets when hot reloading.  This should only be done while extension is under development.
         # if not is_prim_path_valid(robot_prim_path):
