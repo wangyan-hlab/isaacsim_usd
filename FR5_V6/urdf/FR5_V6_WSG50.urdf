@@ -82,12 +82,6 @@
         <mesh filename="/home/yan/Documents/isaacsim_usd/FR5_V6/meshes/fr5_wsg50/FR5_base_link_visuals.obj" scale="1. 1. 1."/>
       </geometry>
     </visual>
-    <visual>
-      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
-      <geometry>
-        <mesh filename="/home/yan/Documents/isaacsim_usd/FR5_V6/meshes/fr5_wsg50/FR5_base_link_collisions.obj" scale="1. 1. 1."/>
-      </geometry>
-    </visual>
     <collision>
       <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
       <geometry>
@@ -105,12 +99,6 @@
       <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
       <geometry>
         <mesh filename="/home/yan/Documents/isaacsim_usd/FR5_V6/meshes/fr5_wsg50/FR5_link1_visuals.obj" scale="1. 1. 1."/>
-      </geometry>
-    </visual>
-    <visual>
-      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
-      <geometry>
-        <mesh filename="/home/yan/Documents/isaacsim_usd/FR5_V6/meshes/fr5_wsg50/FR5_link1_collisions.obj" scale="1. 1. 1."/>
       </geometry>
     </visual>
     <collision>
@@ -132,12 +120,6 @@
         <mesh filename="/home/yan/Documents/isaacsim_usd/FR5_V6/meshes/fr5_wsg50/FR5_link2_visuals.obj" scale="1. 1. 1."/>
       </geometry>
     </visual>
-    <visual>
-      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
-      <geometry>
-        <mesh filename="/home/yan/Documents/isaacsim_usd/FR5_V6/meshes/fr5_wsg50/FR5_link2_collisions.obj" scale="1. 1. 1."/>
-      </geometry>
-    </visual>
     <collision>
       <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
       <geometry>
@@ -155,12 +137,6 @@
       <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
       <geometry>
         <mesh filename="/home/yan/Documents/isaacsim_usd/FR5_V6/meshes/fr5_wsg50/FR5_link3_visuals.obj" scale="1. 1. 1."/>
-      </geometry>
-    </visual>
-    <visual>
-      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
-      <geometry>
-        <mesh filename="/home/yan/Documents/isaacsim_usd/FR5_V6/meshes/fr5_wsg50/FR5_link3_collisions.obj" scale="1. 1. 1."/>
       </geometry>
     </visual>
     <collision>
@@ -182,12 +158,6 @@
         <mesh filename="/home/yan/Documents/isaacsim_usd/FR5_V6/meshes/fr5_wsg50/FR5_link4_visuals.obj" scale="1. 1. 1."/>
       </geometry>
     </visual>
-    <visual>
-      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
-      <geometry>
-        <mesh filename="/home/yan/Documents/isaacsim_usd/FR5_V6/meshes/fr5_wsg50/FR5_link4_collisions.obj" scale="1. 1. 1."/>
-      </geometry>
-    </visual>
     <collision>
       <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
       <geometry>
@@ -205,12 +175,6 @@
       <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
       <geometry>
         <mesh filename="/home/yan/Documents/isaacsim_usd/FR5_V6/meshes/fr5_wsg50/FR5_link5_visuals.obj" scale="1. 1. 1."/>
-      </geometry>
-    </visual>
-    <visual>
-      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
-      <geometry>
-        <mesh filename="/home/yan/Documents/isaacsim_usd/FR5_V6/meshes/fr5_wsg50/FR5_link5_collisions.obj" scale="1. 1. 1."/>
       </geometry>
     </visual>
     <collision>
@@ -232,12 +196,6 @@
         <mesh filename="/home/yan/Documents/isaacsim_usd/FR5_V6/meshes/fr5_wsg50/FR5_link6_visuals.obj" scale="1. 1. 1."/>
       </geometry>
     </visual>
-    <visual>
-      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
-      <geometry>
-        <mesh filename="/home/yan/Documents/isaacsim_usd/FR5_V6/meshes/fr5_wsg50/FR5_link6_collisions.obj" scale="1. 1. 1."/>
-      </geometry>
-    </visual>
     <collision>
       <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
       <geometry>
@@ -250,12 +208,6 @@
       <origin xyz="0. 0. 0.009" rpy="0. 0. 0."/>
       <geometry>
         <cylinder radius="0.041" length="0.018"/>
-      </geometry>
-    </visual>
-    <visual>
-      <origin xyz="0. 0. 0.008" rpy="0. 0. 1.5707963"/>
-      <geometry>
-        <mesh filename="/home/yan/Documents/isaacsim_usd/FR5_V6/meshes/fr5_wsg50/collisions__geom_3.obj" scale="1. 1. 1."/>
       </geometry>
     </visual>
     <visual>

@@ -28,7 +28,8 @@ class PickPlace(tasks.PickPlace):
 
     def set_robot(self) -> SingleManipulator:
         #TODO: change the asset path here
-        asset_path = "/home/yan/Documents/isaacsim_usd/FR5_V6/usd/FR5_V6_RTQ85/FR5_V6_RTQ85_table.usd"
+        # asset_path = "/home/yan/Documents/isaacsim_usd/FR5_V6/usd/FR5_V6_RTQ85/FR5_V6_RTQ85_table.usd"
+        asset_path = "/home/yan/Documents/isaacsim_usd/FR5_V6/usd/FR5_V6_RTQ85/FR5_V6_RTQ85_wristcam_table.usd"
         prim_path = "/World/FR5_V6"
         add_reference_to_stage(usd_path=asset_path, prim_path=prim_path)
         gripper = ParallelGripper(

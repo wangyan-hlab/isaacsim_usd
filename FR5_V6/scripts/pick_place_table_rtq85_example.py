@@ -10,11 +10,10 @@ from controllers.pick_place import PickPlaceController
 my_world = World(stage_units_in_meters=1.0)
 
 
-target_position = np.array([0, -0.3, 0])
-target_position[2] = 0.0515 / 2.0
-cube_initial_orientation =  np.array([0, -0.4, 0])
+target_position = np.array([0, -0.3, 0.0515/2])
+cube_initial_position =  np.array([0, -0.4, 0.0515/2])
 my_task = PickPlace(name="fr_pick_place_table", 
-                    cube_initial_position=cube_initial_orientation,
+                    cube_initial_position=cube_initial_position,
                     target_position=target_position)
 
 my_world.add_task(my_task)

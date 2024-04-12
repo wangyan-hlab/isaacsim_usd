@@ -12,7 +12,7 @@ my_world = World(stage_units_in_meters=1.0)
 
 target_position = np.array([0.55, 0.65, 0])
 target_position[2] = 0.0515 / 2.0 + 0.825
-cube_initial_orientation =  np.array([0.55, 0.55, 0.855])
+cube_initial_orientation =  np.array([0.55, 0.55, 0.0515/2 + 0.825])
 my_task = PickPlace(name="fr_pick_place_table_wsg50", 
                     cube_initial_position=cube_initial_orientation,
                     target_position=target_position)

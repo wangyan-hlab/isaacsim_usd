@@ -73,6 +73,6 @@ body_cylinders:
       pt2: [0,0,0.]
       radius: .05
 body_collision_controllers:
-    # - name: robotiq_85_base_link
-    - name: base
+    - name: robotiq_85_base_link
+    # - name: base
       radius: .05

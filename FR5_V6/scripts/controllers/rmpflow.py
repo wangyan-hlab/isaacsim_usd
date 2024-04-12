@@ -8,14 +8,14 @@ class RMPFlowController(mg.MotionPolicyController):
         robot_description_path = "/home/yan/Documents/isaacsim_usd/FR5_V6/scripts/rmpflow/robot_descriptor.yaml"
         rmpflow_config_path = "/home/yan/Documents/isaacsim_usd/FR5_V6/scripts/rmpflow/fr_rmpflow_common.yaml"
         ## for robotiq85
-        # urdf_path = "/home/yan/Documents/isaacsim_usd/FR5_V6/urdf/FR5_V6_RTQ85.urdf"
-        # end_effector_frame_name = "robotiq_85_base_link"
+        urdf_path = "/home/yan/Documents/isaacsim_usd/FR5_V6/urdf/FR5_V6_RTQ85.urdf"
+        end_effector_frame_name = "robotiq_85_base_link"
         ## for wsg50
         # urdf_path = "/home/yan/Documents/isaacsim_usd/FR5_V6/urdf/FR5_V6_WSG50.urdf"
         # end_effector_frame_name = "base"
         ## for dahuan_pgi80
-        urdf_path = "/home/yan/Documents/isaacsim_usd/FR5_V6/urdf/FR5_V6_DHPGI80.urdf"
-        end_effector_frame_name = "base"
+        # urdf_path = "/home/yan/Documents/isaacsim_usd/FR5_V6/urdf/FR5_V6_DHPGI80.urdf"
+        # end_effector_frame_name = "base"
         self.rmpflow = mg.lula.motion_policies.RmpFlow(robot_description_path=robot_description_path,
                                                         rmpflow_config_path=rmpflow_config_path,
                                                         urdf_path=urdf_path,
